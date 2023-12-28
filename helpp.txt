@@ -1,0 +1,120 @@
+Diamond Price prediction project
+
+STEP1:-
+========
+Anacoda prompt -> 
+-move to e directory
+E:
+-cd F directory
+F:\cd F:\MLProjectsPW\DiamondPricePrediction2
+-give code . + enter --> it will open vs code 
+F:\MLProjectsPW\DiamondPricePrediction2>code . 
+=============================================================================
+
+
+why to create a new enviroment for new projects?
+- to isloate project in system , so according to project u can install that server laibreryes and do setup and code
+
+let say in u r compay u are working in 2 project where
+
+env1:-
+project1  use = python 3.1v , flask 
+					==============> using anacoda we can do that (it have on econda library which will help to sprate isolated envotment )
+env2:-
+project2 use = python 3.8 , skleoyn , deep learning 
+
+==============================================================================================================================
+STEP2:-create a new enviroment
+=========
+open terminal in vs code --> + --> command proment
+
+how to create envorment ?
+- we create one folder in which all packahe we will install so when ever we nned pack then we will refer this folder
+
+from terminal :-
+1]
+
+conda create -n venv python==3.9 -y
+e.g - 
+F:\MLProjectsPW\DiamondPricePrediction2>conda create -n venv python==3.9 -y
+then give yes for new workspace pop
+-> this will create new fold in which all libers are prent and when if we insatll any lib by pip it automaticlly come under this folder
+
+2] to activate :- conda activate venv 
+e.g
+(base) F:\MLProjectsPW\DiamondPricePrediction2>conda activate venv
+after that prom change from base to env
+(venv) F:\MLProjectsPW\DiamondPricePrediction2>
+==============================================================================================================================
+
+STEP2:create setup.py & requirements.txt files
+============================
+#create setup.py file :- this fill will make ur project as package , so u can also install in other code and use this project code/functions
+
+in vs code DiamondPricePrediction>
+create setup.py file:-
+
+from setuptools import find_packages,setup
+from typing import List
+
+#HYPEN_E_DOT='-e .'
+
+#insted of hared code the value we take requirements.txt file contain 
+#we pass requirements.txt --> to get_requirements () , we take all lib name and put into requirements[] list
+def get_requirements(file_path:str)->List[str]:
+    requirements=[]
+    with open(file_path) as file_obj:       #here we open requirements.txt file
+        requirements=file_obj.readlines()   #here we read requirements.txt file contain line by line   #pandas \n numpy \n seaborn \n
+        requirements=[req.replace("\n","") for req in requirements]  ##when we move to nect line (\n) will come to remove it we write this 
+
+        '''
+        if HYPEN_E_DOT in requirements:
+            requirements.remove(HYPEN_E_DOT)
+        return requirements                 #give all lib name only  :- pandas numpy seaborn 
+        '''
+
+setup(
+    name='DiamondPriceprediction',
+    version='0.0.1',
+    author='Aakash',
+    author_email="aspersonal22@gmail.com",
+    install_requires=get_requirements('requirements.txt'),#this will directly read packages name from requirements.txt file 
+    packages=find_packages()
+
+)
+=====================================\
+requirements.txt :-
+
+pandas
+numpy
+seaborn
+flask
+#-e .
+=====================================
+
+steup 3:- run coomand to build package:-
+=========================================
+create scr folder --> create (__init__.py)
+
+
+#build pakage :- 2 way we have 
+#1) -e . :
+#give -e . in requirements.txt file  & add code in setup.py to handle -e.
+#when u want to build pakage the u run :- pip install -r requirements.txt
+#eg:-
+#(venv) F:\MLProjectsPW\DiamondPricePrediction2>pip install -r requirements.txt
+#then  this -e. will run the setup.py file and create the package
+
+#2)steup.py
+#remove -e . -> requirements.txt file else it will give error
+#run on termial =>  python setup.py install
+(F:\MLProjectsPW\DiamondPricePrediction2\venv) F:\MLProjectsPW\DiamondPricePrediction2>python setup.py install
+
+
+===================
+
+#deactivate conda:-	
+conda deactivate
+
+
+

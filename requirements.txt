@@ -1,0 +1,16 @@
+pandas
+numpy
+seaborn
+flask
+-e .
+
+
+#build pakage : 2 way we have 
+#1) -e . :
+#give -e . in requirements.txt file  & add code in setup.py to handle -e.
+#when u want to build pakage the u run :- pip install -r requirements.txt
+#then  this -e. will run the setup.py file and create the package
+
+#2)steup.py
+#remove -e . -> requirements.txt file else it will give error
+#run on termial =>  python setup.py install
