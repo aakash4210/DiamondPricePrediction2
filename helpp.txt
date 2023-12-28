@@ -1,4 +1,6 @@
 Diamond Price prediction project
+note :- support persone link 
+https://github.com/aswinikumar0509/Diamond_Price_Prediction
 
 STEP1:-
 ========
@@ -105,16 +107,51 @@ create scr folder --> create (__init__.py)
 #(venv) F:\MLProjectsPW\DiamondPricePrediction2>pip install -r requirements.txt
 #then  this -e. will run the setup.py file and create the package
 
-#2)steup.py
+#2)steup.py:  always use this method to create package
 #remove -e . -> requirements.txt file else it will give error
 #run on termial =>  python setup.py install
-(F:\MLProjectsPW\DiamondPricePrediction2\venv) F:\MLProjectsPW\DiamondPricePrediction2>python setup.py install
+(venv) F:\MLProjectsPW\DiamondPricePrediction2>python setup.py install
 
 
 ===================
 
 #deactivate conda:-	
 conda deactivate
+===============
 
 
 
+step 4:-
+===========
+1)creat .gitignore file :-
+DiamondPricePrediction2>.gitignore
+inside write the file name which u dont want to commmentin github when you give commit
+
+venv/
+
+
+2)create git repository & come back to vs
+3)create README.md file (it is description file )
+inside file write :- ##machine learning projects
+
+4) from terminal
+- git init
+- git add .       -> to add file which are in vs to --> git
+- git status      -> this will show kya kay add hua he 
+- git commit -m "first commit"
+- git branch -M main
+- git remote add origin https://github.com/aakash4210/DiamondPricePrediction2.git
+- git push -u origin main
+
+thrn go to git site refresh the page all files will be there
+
+
+step 5:- update .gitigonre file 
+===========
+in git hub site give new file ---> gitignore -->language python  --> then it auto genrate all code 
+copy that and put in to your vs gitignore file 
+
+from termianl :-
+git add .
+git commit -m "gitignore commit"
+git push -u origin main
