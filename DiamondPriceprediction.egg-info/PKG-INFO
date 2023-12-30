@@ -3,7 +3,3 @@ Name: DiamondPriceprediction
 Version: 0.0.1
 Author: Aakash
 Author-email: aspersonal22@gmail.com
-Requires-Dist: pandas
-Requires-Dist: numpy
-Requires-Dist: seaborn
-Requires-Dist: flask
