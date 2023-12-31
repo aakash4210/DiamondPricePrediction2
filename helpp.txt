@@ -1,6 +1,15 @@
 Diamond Price prediction project
 note :- support persone link 
 https://github.com/aswinikumar0509/Diamond_Price_Prediction
+conda deactivate
+conda activate venv 
+
+
+from termianl :-
+git add .
+git commit -m "gitignore commit"
+git push -u origin main
+
 
 STEP1:-
 ========
