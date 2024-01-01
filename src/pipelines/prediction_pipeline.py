@@ -21,8 +21,8 @@ class PredictPipeline:
             preprocessor=load_object(preprocessor_path)
             model=load_object(model_path)
 
+            #webpages se aya hua data trandeom kiya & predict kiya
             data_scaled=preprocessor.transform(features)
-
             pred=model.predict(data_scaled)
             return pred
             

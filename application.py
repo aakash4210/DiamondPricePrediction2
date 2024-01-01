@@ -11,7 +11,6 @@ def home_page():
     return render_template('index.html')
 
 @app.route('/predict',methods=['GET','POST'])
-
 def predict_datapoint():
     if request.method=='GET':
         return render_template('form.html')
@@ -29,13 +28,19 @@ def predict_datapoint():
             clarity = request.form.get('clarity')
         )
         final_new_data=data.get_data_as_dataframe()
-        predict_pipeline=PredictPipeline()
+        predict_pipeline=PredictPipeline()          #this will trigger 
         pred=predict_pipeline.predict(final_new_data)
 
         results=round(pred[0],2)
 
+        #we display that output on webpage
         return render_template('form.html',final_result=results)
     
 
 if __name__=="__main__":
     app.run(host='0.0.0.0',debug=True)
+
+
+
+#http://127.0.0.1:5000/
+#http://127.0.0.1:5000/predict

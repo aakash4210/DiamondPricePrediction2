@@ -164,3 +164,100 @@ from termianl :-
 git add .
 git commit -m "gitignore commit"
 git push -u origin main
+
+
+
+=========================================
+==================================
+Advance project setup
+
+create folder artifacts & notebooks
+DiamondPricePrediction2>
+artifacts
+notebooks
+	->data(folder)
+
+==============
+thory:-
+in jupiternot book:
+	EDA->FE->FS->model traing -> model hyperparamter tunning-> deployement of model
+
+we Automate this entire projects:
+=======================
+	    ---> traing piplines---> do it by diff componets
+piplines ----
+	    ---> prediction piplines
+
+
+Trainning piplines:-
+------------------
+
+--->[data ingeation]----->[data transfor metion]---->[model traing]-->[model evaluate]
+
+data ingeation :- read data from score
+data transfor metion :- EDA FE,FS
+model trainer :- here using ip data we train multiple diff model
+model evaluate :- js ka accuracy jada he uka .pkl file banyge
+
+
+Prediction pipline:-
+--------------------
+
+  [forntend web poage ]---------------> (cloud server)
+			API
+			<------------
+
+========================================
+
+create folder under scr 
+scr > components
+	>__init__.py
+	>data_ingestion.py
+	>data_transformation.py
+	>model_trainer.py
+    > pipelines 	
+	>__init__.py
+	>training_pipeline.py
+	>prediction_pipeline.py  # from this piplines we call components
+
+    > logger.py
+    > exception.py
+    >utils.py    # write that code which is common for all project
+
+=======================================
+logging & exception handling
+create logger.py & exception.py
+logger.py
+------------
+exception.py
+--------------
+===============================
+EDA FE & model Training - jupiter notebook this is for our referas only
+===============================
+we will automated all process(data extarction EDA, FS FE) by createding componet and 
+training pipline
+data ingeation:-
+==============
+in this we take data , and split the data into train and test data and give op as - > train & test
+
+			           --->test					                  --->test		
+		               |		----->(data transfor metion) ----|		----(model traing)
+-->(data ingeation) ---|___>train					              ___>train
+	
+read data					feature engginering			find out best model from all model
+split data  					crete pkl file				crete pkl file of best model, we can us ethat file to predict data 
+
+create data ingeation:-
+--------------------------
+
+=======================================================================
+
+create utitrlity.py
+
+====
+create templates * appliaction file 
+	>index.html
+	<h1>home page</h1>
+
+
+127.0.0.1:5000/predict
